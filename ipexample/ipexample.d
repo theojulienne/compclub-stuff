@@ -1,6 +1,7 @@
 module ipexample;
 
 import std.string;
+import std.stdio;
 
 import icypixels.all;
 
@@ -11,6 +12,8 @@ import icylict.SDL.SDL;
 class IPExample {
     GLWindow win;
     
+    Texture tex;
+    
     this( ) {
         win = new GLWindow( 1024, 768 );
         win.title = "IcyPixels Example";
@@ -20,6 +23,8 @@ class IPExample {
 		win.onKeyDownEvent += &handleKeyDown;
 		win.onKeyUpEvent += &handleKeyUp;
 		win.onRedraw += &handleRedraw;
+		
+		tex = TextureCache.loadTexture( "images/test.png", false );
     }
     
     void handleMouseMove( GLWindow window, Event event ) {
@@ -47,6 +52,8 @@ class IPExample {
 	    
 	    glLoadIdentity( );
 	    
+	    Primitives.renderSprite( tex.width, tex.height, tex );
+	    
 	    win.resetPerspectiveProjection( );
 	}
     
@@ -60,4 +67,6 @@ int main( string[] args ) {
     
     IPExample example = new IPExample;
     example.runGameLoop( );
+    
+    return 0;
 }
