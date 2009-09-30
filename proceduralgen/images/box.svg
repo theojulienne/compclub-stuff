@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+		<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+		    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+		<svg xmlns="http://www.w3.org/2000/svg"
+		     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="410" height="410">
+<path d="M 10.000000,10.000000 L 10.000000,410.000000 L 410.000000,410.000000 L 410.000000,10.000000 L 10.000000,10.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="none" />
+<path d="M 10.000000,10.000000 L 10.000000,60.000000 L 60.000000,60.000000 L 60.000000,10.000000 L 10.000000,10.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 110.000000,10.000000 L 110.000000,60.000000 L 160.000000,60.000000 L 160.000000,10.000000 L 110.000000,10.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 210.000000,10.000000 L 210.000000,60.000000 L 260.000000,60.000000 L 260.000000,10.000000 L 210.000000,10.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 310.000000,10.000000 L 310.000000,60.000000 L 360.000000,60.000000 L 360.000000,10.000000 L 310.000000,10.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 10.000000,110.000000 L 10.000000,160.000000 L 60.000000,160.000000 L 60.000000,110.000000 L 10.000000,110.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 110.000000,110.000000 L 110.000000,160.000000 L 160.000000,160.000000 L 160.000000,110.000000 L 110.000000,110.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 210.000000,110.000000 L 210.000000,160.000000 L 260.000000,160.000000 L 260.000000,110.000000 L 210.000000,110.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 310.000000,110.000000 L 310.000000,160.000000 L 360.000000,160.000000 L 360.000000,110.000000 L 310.000000,110.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 10.000000,210.000000 L 10.000000,260.000000 L 60.000000,260.000000 L 60.000000,210.000000 L 10.000000,210.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 110.000000,210.000000 L 110.000000,260.000000 L 160.000000,260.000000 L 160.000000,210.000000 L 110.000000,210.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 210.000000,210.000000 L 210.000000,260.000000 L 260.000000,260.000000 L 260.000000,210.000000 L 210.000000,210.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 310.000000,210.000000 L 310.000000,260.000000 L 360.000000,260.000000 L 360.000000,210.000000 L 310.000000,210.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 10.000000,310.000000 L 10.000000,360.000000 L 60.000000,360.000000 L 60.000000,310.000000 L 10.000000,310.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 110.000000,310.000000 L 110.000000,360.000000 L 160.000000,360.000000 L 160.000000,310.000000 L 110.000000,310.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 210.000000,310.000000 L 210.000000,360.000000 L 260.000000,360.000000 L 260.000000,310.000000 L 210.000000,310.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 310.000000,310.000000 L 310.000000,360.000000 L 360.000000,360.000000 L 360.000000,310.000000 L 310.000000,310.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 60.000000,60.000000 L 60.000000,110.000000 L 110.000000,110.000000 L 110.000000,60.000000 L 60.000000,60.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 160.000000,60.000000 L 160.000000,110.000000 L 210.000000,110.000000 L 210.000000,60.000000 L 160.000000,60.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 260.000000,60.000000 L 260.000000,110.000000 L 310.000000,110.000000 L 310.000000,60.000000 L 260.000000,60.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 360.000000,60.000000 L 360.000000,110.000000 L 410.000000,110.000000 L 410.000000,60.000000 L 360.000000,60.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 60.000000,160.000000 L 60.000000,210.000000 L 110.000000,210.000000 L 110.000000,160.000000 L 60.000000,160.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 160.000000,160.000000 L 160.000000,210.000000 L 210.000000,210.000000 L 210.000000,160.000000 L 160.000000,160.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 260.000000,160.000000 L 260.000000,210.000000 L 310.000000,210.000000 L 310.000000,160.000000 L 260.000000,160.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 360.000000,160.000000 L 360.000000,210.000000 L 410.000000,210.000000 L 410.000000,160.000000 L 360.000000,160.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 60.000000,260.000000 L 60.000000,310.000000 L 110.000000,310.000000 L 110.000000,260.000000 L 60.000000,260.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 160.000000,260.000000 L 160.000000,310.000000 L 210.000000,310.000000 L 210.000000,260.000000 L 160.000000,260.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 260.000000,260.000000 L 260.000000,310.000000 L 310.000000,310.000000 L 310.000000,260.000000 L 260.000000,260.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 360.000000,260.000000 L 360.000000,310.000000 L 410.000000,310.000000 L 410.000000,260.000000 L 360.000000,260.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 60.000000,360.000000 L 60.000000,410.000000 L 110.000000,410.000000 L 110.000000,360.000000 L 60.000000,360.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 160.000000,360.000000 L 160.000000,410.000000 L 210.000000,410.000000 L 210.000000,360.000000 L 160.000000,360.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 260.000000,360.000000 L 260.000000,410.000000 L 310.000000,410.000000 L 310.000000,360.000000 L 260.000000,360.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+<path d="M 360.000000,360.000000 L 360.000000,410.000000 L 410.000000,410.000000 L 410.000000,360.000000 L 360.000000,360.000000 " stroke-width="1" stroke="black" stroke-linecap="round" fill="black" />
+</svg>
