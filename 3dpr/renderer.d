@@ -45,38 +45,38 @@ class IPExample {
 		win.onKeyUpEvent += &handleKeyUp;
 		win.onRedraw += &handleRedraw;
 		
-		/*
-		points.length = 8*8*8;
+		version (SampleCube) {
+			points.length = 8*8*8;
 		
-		for ( int x = 0; x < 8; x++ ) {
-		    for ( int y = 0; y < 8; y++ ) {
-		        for ( int z = 0; z < 8; z++ ) {
-		            int n = (((x*8)+y)*8)+z;
+			for ( int x = 0; x < 8; x++ ) {
+			    for ( int y = 0; y < 8; y++ ) {
+			        for ( int z = 0; z < 8; z++ ) {
+			            int n = (((x*8)+y)*8)+z;
 		            
-		            assert( n < points.length );
+			            assert( n < points.length );
 		            
-		            points[n].x = x;
-		            points[n].y = y;
-		            points[n].z = z;
-		            points[n].r = x / 8.0;
-		            points[n].g = y / 8.0;
-		            points[n].b = z / 8.0;
-		            points[n].a = 1.0;
-		        }
-		    }
-		}
-		*/
+			            points[n].x = x;
+			            points[n].y = y;
+			            points[n].z = z;
+			            points[n].r = x / 8.0;
+			            points[n].g = y / 8.0;
+			            points[n].b = z / 8.0;
+			            points[n].a = 1.0;
+			        }
+			    }
+			}
+		} else {
+			points.length = awesomePixels.length;
 		
-		points.length = awesomePixels.length;
-		
-		foreach( n, pixel; awesomePixels ) {
-    		points[n].x = pixel[0];
-		    points[n].y = pixel[1];
-		    points[n].z = pixel[2];
-		    points[n].r = 1;
-		    points[n].g = 1;
-		    points[n].b = 1;
-		    points[n].a = 1.0;
+			foreach( n, pixel; awesomePixels ) {
+	    		points[n].x = pixel[0];
+			    points[n].y = pixel[1];
+			    points[n].z = pixel[2];
+			    points[n].r = 1;
+			    points[n].g = 1;
+			    points[n].b = 1;
+			    points[n].a = 1.0;
+			}
 		}
 		
 		
