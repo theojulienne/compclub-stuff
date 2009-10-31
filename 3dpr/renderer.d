@@ -8,9 +8,16 @@ import std.math;
 
 import icypixels.all;
 
-import icylict.opengl;
-import icylict.openglu;
-import icylict.SDL.SDL;
+version (darwin) {
+	public import derelict.sdl.sdl;
+	public import derelict.opengl.gl;
+	
+	public import tango.time.StopWatch;
+} else {
+	import icylict.opengl;
+	import icylict.openglu;
+	import icylict.SDL.SDL;
+}
 
 struct Pixel {
     float x, y, z;
@@ -58,7 +65,7 @@ class IPExample {
 		        }
 		    }
 		}
-		*/		
+		*/
 		
 		points.length = awesomePixels.length;
 		
@@ -186,7 +193,7 @@ class IPExample {
 	        
 	        glPopMatrix( );
 	    }
-	    
+	    /*
 	    // sorry
 	    int findFurthestPoint( ) {
 	        int furthest = -1;
@@ -212,7 +219,16 @@ class IPExample {
 	        int furthest = findFurthestPoint( );
 	        renderPoint( furthest );
 	        distances[furthest] = -1;
-	    }
+	    }*/
+	
+		glEnable( GL_BLEND );
+		glBlendFunc(GL_SRC_ALPHA,GL_ONE);
+		glHint(GL_PERSPECTIVE_CORRECTION_HINT,GL_NICEST);
+		glHint(GL_POINT_SMOOTH_HINT,GL_NICEST);
+	
+		foreach ( i, point; points ) {
+			renderPoint( i );
+		}
 	}
     
     void runGameLoop( ) {
