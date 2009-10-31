@@ -123,6 +123,9 @@ class IPExample {
 	    
 	    float scale = 0.6;
 	    float blobSize = 0.2;//0.8;
+		version (SampleCube) {
+			blobSize = 0.8;
+		}
 	    
 	    glRotatef( rotation.x, 1.0f, 0.0f, 0.0f );
 	    glRotatef( rotation.y, 0.0f, 1.0f, 0.0f );
