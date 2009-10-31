@@ -193,41 +193,43 @@ class IPExample {
 	        
 	        glPopMatrix( );
 	    }
-	    /*
-	    // sorry
-	    int findFurthestPoint( ) {
-	        int furthest = -1;
-	        float furthestDist = -1;
-	        
-	        foreach ( i, point; points ) {
-	            if ( distances[i] < 0 )
-	                continue; // skip seen point
-	            
-	            if ( distances[i] > furthestDist ) {
-	                furthestDist = distances[i];
-	                furthest = i;
-	            }
-	        }
-	        
-	        assert( furthest != -1 );
-	        
-	        return furthest;
-	    }
 	    
-	    // sorry
-	    foreach ( i, point; points ) {
-	        int furthest = findFurthestPoint( );
-	        renderPoint( furthest );
-	        distances[furthest] = -1;
-	    }*/
-	
-		glEnable( GL_BLEND );
-		glBlendFunc(GL_SRC_ALPHA,GL_ONE);
-		glHint(GL_PERSPECTIVE_CORRECTION_HINT,GL_NICEST);
-		glHint(GL_POINT_SMOOTH_HINT,GL_NICEST);
-	
-		foreach ( i, point; points ) {
-			renderPoint( i );
+		version (ZOrdering) {
+		    // sorry
+		    int findFurthestPoint( ) {
+		        int furthest = -1;
+		        float furthestDist = -1;
+	        
+		        foreach ( i, point; points ) {
+		            if ( distances[i] < 0 )
+		                continue; // skip seen point
+	            
+		            if ( distances[i] > furthestDist ) {
+		                furthestDist = distances[i];
+		                furthest = i;
+		            }
+		        }
+	        
+		        assert( furthest != -1 );
+	        
+		        return furthest;
+		    }
+	    
+		    // sorry
+		    foreach ( i, point; points ) {
+		        int furthest = findFurthestPoint( );
+		        renderPoint( furthest );
+		        distances[furthest] = -1;
+		    }
+		} else {
+			glEnable( GL_BLEND );
+			glBlendFunc(GL_SRC_ALPHA,GL_ONE);
+			glHint(GL_PERSPECTIVE_CORRECTION_HINT,GL_NICEST);
+			glHint(GL_POINT_SMOOTH_HINT,GL_NICEST);
+
+			foreach ( i, point; points ) {
+				renderPoint( i );
+			}
 		}
 	}
     
