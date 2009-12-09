@@ -1,0 +1,226 @@
+from svg import * 
+from random import randint
+from random import uniform
+from math import *
+
+class Picture(object):
+
+	def __init__(self):
+		self.svg = SVG()
+
+	def hsvTorgb(self, hsv):
+		h,s,v = hsv
+
+		h60 = float(h)/60.0
+
+		hi = int(h60) % 6
+		f = h60 - int(h60)
+		p = v * (1-s)
+		q = v * (1-f*s)
+		t = v * (1-(1-f)*s)
+
+		colorVector = [(v,t,p), (q,v,p), (p,v,t), (p,q,v), (t,p,v), (v,p,q)]
+		return colorVector[hi]
+
+
+	def drawNgon(self, n, startAngle, centerX, centerY, radius):
+		stepAngle = pi*2.0 / float(n)
+				
+		nGon = Path()
+		angle = startAngle
+
+		first = True
+
+		for step in range(n+1):		
+
+			progress = float(step)/float(n)
+			hsv = ( progress*360, 1.0, 1.0 )
+
+			(r,g,b) = self.hsvTorgb( hsv )
+			colour = (r*255, g*255, b*255)			
+
+
+			nGon.setStyle("stroke-width", 5)
+			nGon.setStyle("stroke", "rgb(%d,%d,%d)" % colour )	
+
+			# centerX, centerY, angle, radius
+			x = centerX + radius*cos(angle)
+			y = centerY + radius*sin(angle)
+
+			# either move or line to (x , y)
+			if first: 
+				first = False 
+				nGon.moveTo(x, y)
+			else:
+				nGon.lineTo(x, y)
+				self.svg.addPath(nGon)
+
+				nGon = Path()
+				nGon.moveTo(x , y)
+
+			angle += stepAngle
+
+	def drawStar(self, n, startAngle, centerX, centerY, radius, lineWidth = 5):
+
+		n *= 2
+
+		stepAngle = pi*2.0 / float(n)
+				
+		polygon = Path()
+		angle = startAngle
+
+		first = True
+
+
+		for step in range(n+1):		
+
+			progress = float(step)/float(n)
+			hsv = ( progress*360, 1.0, 1.0 )
+
+			(r,g,b) = self.hsvTorgb( hsv )
+			colour = (r*255, g*255, b*255)			
+
+			#colour = (0,0,0)
+
+			polygon.setStyle("stroke-width", lineWidth)
+			polygon.setStyle("stroke", "rgb(%d,%d,%d)" % colour )	
+
+			if step % 2 == 0:
+				r = radius
+			else:
+				r = 2.0*radius
+
+			# centerX, centerY, angle, radius
+			x = centerX + r*cos(angle)
+			y = centerY + r*sin(angle)
+
+			# either move or line to (x , y)
+			if first: 
+				first = False 
+				polygon.moveTo(x, y)
+			else:
+				polygon.lineTo(x, y)
+				self.svg.addPath(polygon)
+
+				polygon = Path()
+				polygon.moveTo(x , y)
+
+			angle += stepAngle		
+		
+	def drawJ(self,x,y,width,height):
+		polygon = Path()
+
+		polygon.setStyle("stroke-width", 5)
+		polygon.setStyle("stroke", "black" )
+
+
+		topLength = width*0.8
+
+		x, y = ( x - topLength*0.5, y - height*0.5 )
+
+		polygon.moveTo( x, y )
+
+		x += topLength
+
+		polygon.lineTo( x, y )
+
+		x -= topLength*0.5
+
+		polygon.moveTo( x, y )
+
+		y += height*0.75
+
+		polygon.lineTo( x, y )
+
+		y += height*0.25
+
+		x -= width*0.25
+
+		polygon.lineTo( x, y )
+
+		x -= width*0.25
+		y -= height*0.25
+
+		polygon.lineTo( x, y )
+
+		self.svg.addPath(polygon)
+
+		
+
+	def drawSpirograph(self,centerX,centerY,mainRadius,smallRadius,distance,iterations,stepAngle, lineWidth=5):
+
+
+		theta = 0
+
+		first = True 
+
+		spirograph = Path()
+
+		for step in range(iterations):
+			cycleEvery = 100			
+
+			progress = float(step%cycleEvery)/float(cycleEvery)
+			hsv = ( progress*360, 1.0, 1.0 )
+
+			(r,g,b) = self.hsvTorgb( hsv )
+			colour = (r*255, g*255, b*255)			
+			#colour = (0,0,0)
+			print( hsv, colour )
+
+			spirograph.setStyle("stroke-width", lineWidth)
+			spirograph.setStyle("stroke", "rgb(%d,%d,%d)" % colour )	
+
+			radiusDiff = mainRadius - smallRadius
+
+			x = radiusDiff * cos(theta) + distance*cos( (radiusDiff / smallRadius) * theta ) 
+			y = radiusDiff * sin(theta) - distance*sin( (radiusDiff / smallRadius) * theta ) 
+
+			
+			# either move or line to (centerX + x , centerY + y)
+			if first: 
+				first = False 
+				spirograph.moveTo(centerX + x , centerY + y)
+				print(centerX+x, centerY+y)
+			else:
+				spirograph.lineTo(centerX + x , centerY + y)
+				self.svg.addPath(spirograph)
+
+				spirograph = Path()
+				spirograph.moveTo(centerX + x , centerY + y)
+
+				print(centerX+x, centerY+y)
+
+			theta += stepAngle
+
+			
+			
+
+		print( (mainRadius,smallRadius,distance,iterations,stepAngle) )
+
+	def writeSVGFile(self, filename):
+		xml = self.svg.getXML()
+		f = open(filename, 'w')
+		f.write(xml)
+		f.close()
+
+
+
+
+picture = Picture()
+
+
+# for i in range(50):
+	# picture.drawStar(randint(5,7), 2*pi/4, randint(0,1800), randint(0,800), randint(4,10), lineWidth=1)
+
+# for i in range(5):
+	#  picture.drawSpirograph(randint(0,1800), randint(0,800), randint(80,200), float(randint(2,10)), float(randint(20, 60)), 200, pi/500, lineWidth=1 )
+
+picture.drawSpirograph(800.0, 400.0, 200.0*0.75, 5*0.75, 39, 201, pi/100 )
+
+picture.drawStar(7, 2*pi/4, 800.0, 400.0, 200.0)
+
+
+picture.drawJ(800,400,100,100)
+
+picture.writeSVGFile("../images/star.svg")
+
