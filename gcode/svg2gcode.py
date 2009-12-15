@@ -15,16 +15,17 @@ class SVG2GCode:
         self._createImage()
     
     def _createImage(self):
-        pattern = re.compile('d=\"M (.*?),(.*) L (.*?),(.*?)\" stroke=\"\#(.*?)\"')
+        pattern = re.compile('d=\"M (.*?),(.*) L (.*?),(.*?)\"')
         currentCoords = (0.0, 0.0)
         currentDepth = 0.0
         
         for line in self.svg:
-            
+            print line
             nums = pattern.findall(line)
+            print nums
 
             if nums:
-                colour = nums[0][4]
+#                colour = nums[0][4]
                 
                 nums = nums[0][:4]
                 
@@ -32,9 +33,9 @@ class SVG2GCode:
                 source = nums[:2]
                 target = nums[2:4]
                 
-                depth = self.getDepth(colour)
+#                depth = self.getDepth(colour)
                 self.gcodeObject.moveAbsolute(x=source[0], y=source[1])
-                self.gcodeObject.cutAbsolute(x=target[0], y=target[1], z=depth)
+                self.gcodeObject.cutAbsolute(x=target[0], y=target[1], z=BLOCK_DEPTH)
     
         self.gcodeObject.finish()
 
