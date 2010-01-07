@@ -18,7 +18,7 @@ def findNumImages():
 AMOUNT_OF_IMAGES = findNumImages()
 superImage = 'aj.jpg'
 resolution = 5 # The lower, the less subimages will be visible (down to 1)
-pixelConversionFactor = 8  # Each pixel in super-image represents 10 pixels of a sub-image
+pixelConversionFactor = 4  # Each pixel in super-image represents 10 pixels of a sub-image
                            # This represents the 'size
 
 subImageDimension = resolution * pixelConversionFactor
