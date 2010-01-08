@@ -28,7 +28,7 @@ def preprocessDatabase():
 
 
 def findNumImages():
-    return len(os.listdir('images'))-1
+    return len(filter(lambda x: '.jpg' in x.lower(), os.listdir('images')))
 
 
 def getAverageRegionColour(image, (startx, starty, endx, endy)):
@@ -48,7 +48,6 @@ def getAverageRegionColour(image, (startx, starty, endx, endy)):
 
 def colourOffset(c1, c2):
     return abs(c1[0]-c2[0]) + abs(c1[1]-c2[1]) + abs(c1[2]-c2[2])
-amountOfImages = findNumImages()
 
 
 def getMostSimilarImage(targetColour):
@@ -62,8 +61,10 @@ def getMostSimilarImage(targetColour):
     
     
     
+
     
-    
+amountOfImages = findNumImages()
+print amountOfImages
 superImage = 'hannah.jpg'
 resolution = 6 # The lower, the less subimages will be visible (down to 1)
 pixelConversionFactor = 4  # Each pixel in super-image represents n pixels of a sub-image
@@ -74,7 +75,7 @@ subImageDimension = resolution * pixelConversionFactor
 # Collate average colourinfo on database
 averageColours = getCachedColourData()
 if databaseProcessingIsNecessary(averageColours):
-    print 'Detected that image database preprocessing is necessary.\n Preprocessing is commencing.'
+    print 'Detected that image database preprocessing is necessary.\nPreprocessing is commencing.'
     averageColours = preprocessDatabase()
 print 'Image database colour data collated.\n'
 

@@ -9,11 +9,8 @@ import os, sys, glob
 
 
 def findNumImages():
-    maxNum = -1
-    for imagefile in glob.glob('images/*.jpg'):
-        maxNum = max([maxNum, int(os.path.basename(imagefile).split('.')[0])])
-    return maxNum+1
-        
+    return len(filter(lambda x: '.jpg' in x.lower(), os.listdir('images')))
+
 
 def main(tag, amount):
     f = flickr.photos_search(tags=tag)
@@ -32,7 +29,7 @@ def main(tag, amount):
 
 def resize(size):
     for imagefile in glob.glob('images/*.jpg'):
-        im = Image.open(imagefile)
+        im = Image.open(imagefile)d
         im.thumbnail((1000, size[1]), Image.ANTIALIAS)
         im = im.crop((0, 0, size[0], size[1]))
         im.save(imagefile)
