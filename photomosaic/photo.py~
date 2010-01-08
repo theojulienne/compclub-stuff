@@ -65,8 +65,8 @@ def getMostSimilarImage(targetColour):
     
     
 superImage = 'hannah.jpg'
-resolution = 6 # The lower, the less subimages will be visible (down to 1)
-pixelConversionFactor = 4  # Each pixel in super-image represents n pixels of a sub-image
+resolution = 4 # The lower, the less subimages will be visible (down to 1)
+pixelConversionFactor = 6  # Each pixel in super-image represents n pixels of a sub-image
                            # This represents the 'size' of the mosaic
 subImageDimension = resolution * pixelConversionFactor
 
