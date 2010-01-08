@@ -6,7 +6,7 @@ from PIL import Image
 import flickr
 import urllib, urlparse
 import os, sys, glob
-import photo
+
 
 def findNumImages():
     maxNum = -1
@@ -17,15 +17,15 @@ def findNumImages():
 
 def main(tag, amount):
     f = flickr.photos_search(tags=tag)
-
-    for n, k in enumerate(f, start=findNextImageNumber()):
+    imagesAtStart = findNumImages()
+    for n, k in enumerate(f, start=imagesAtStart):
         url = k.getURL(size='Small', urlType='source')
         image = urllib.URLopener()
         filename = urlparse.urlparse(url).path
         image.retrieve(url, 'images/' + str(n) + '.jpg')
         print 'Downloading image %d:' % n, url
         
-        if n >= amount-1:
+        if n-imagesAtStart >= amount-1:
             break
 
 
